@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import json
 import os
 import requests
@@ -145,10 +145,11 @@ if __name__ == "__main__":
         storage.put(DOMAIN, account)
         storage.save()
 
-        # Display the notification for the user to update the main zone
-        msg = "Please add the following CNAME record to your main DNS zone:\n{}"
-        cname = "{} CNAME {}.".format(VALIDATION_DOMAIN, account["fulldomain"])
-        print(msg.format(cname))
+    # Display the notification for the user to update the main zone
+    msg = "\nPlease add the following CNAME record to your main DNS zone:\n{}"
+    cname = "{} CNAME {}.".format(VALIDATION_DOMAIN, account["fulldomain"])
+    print('------------------------------------------------------------------')
+    print(msg.format(cname))
 
     # Update the TXT record in acme-dns instance
     client.update_txt_record(account, VALIDATION_TOKEN)

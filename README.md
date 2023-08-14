@@ -6,6 +6,8 @@ This authentication hook automatically registers acme-dns accounts and prompts t
 
 Requires Certbot >= 0.10, Python requests library.
 
+Slightly updated to use Python3 and always display the required CNAME record.
+
 ## Installation
 
 1) Install Certbot using instructions at [https://certbot.eff.org](https://certbot.eff.org)
